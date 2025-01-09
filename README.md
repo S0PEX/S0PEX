@@ -10,17 +10,17 @@ I'm a passionate software developer whose journey began with Visual Basic .NET i
 - Technical mentoring and knowledge sharing
 - Cloud infrastructure and DevOps optimization
 
-### Working Student @ Infolytics AG
-- Full-stack development with Spring Boot, Angular, and ReactJS
-- RESTful API development using Spring Boot, Hibernate, and JPA
-- Signal Data Platform (SDF) maintenance using C++ and Boost
-- Cloud infrastructure and deployment automation
-
 ### Bachelor Thesis @ Fraunhofer IPT
 - Migrated AutoML pipeline to Kubernetes cluster
 - Developed NestJS backend and ReactJS frontend
 - Implemented cloud-native architecture using Oracle OKE
 - Tech stack: TypeScript, NestJS, Python, Podman, Argo
+
+### Working Student @ Infolytics AG
+- Full-stack development with Spring Boot, Angular, and ReactJS
+- RESTful API development using Spring Boot, Hibernate, and JPA
+- Signal Data Platform (SDF) maintenance using C++ and Boost
+- Cloud infrastructure and deployment automation
 
 ## 🎓 Education
 - **M.Sc. in Computer Science** - University of Cologne *(Present)*
@@ -44,12 +44,12 @@ I'm a passionate software developer whose journey began with Visual Basic .NET i
   - Virtualization (Docker, Proxmox VE) 
   - Configuration Management (Ansible) 
   - CI/CD (GitLab CI, GitHub Actions) 
-  - Infrastructure as Code 📝
+  - Infrastructure as Code
 - **Cloud Platforms** ☁️
   - Google Compute Engine 
   - Oracle Cloud Infrastructure 
 - **Data & Storage** 💾
-  - SQL Databases (PostgreSQL, MySQL, MariaDB) 📊
+  - SQL Databases (PostgreSQL, MySQL, MariaDB)
   - ORM (Entity Framework, JPA, Hibernate, Drizzle) 
 
 ## 🚀 Areas of Expertise
