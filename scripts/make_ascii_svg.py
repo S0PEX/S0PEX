@@ -29,10 +29,10 @@ body = "".join(
     if t
 )
 Path("img/avi-ascii.svg").write_text(
-    f"""<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}" font-family="monospace" font-size="{LH * 0.9:.1f}" fill="#c9d1d9">
-<style>.r{{white-space:pre;clip-path:inset(0 100% 0 0);animation:w .9s steps(24) forwards}}@keyframes w{{to{{clip-path:inset(0)}}}}@media (prefers-reduced-motion:reduce){{.r{{animation:none;clip-path:none}}}}</style>
-<rect width="100%" height="100%" rx="8" fill="#0d1117"/>
-{body}
+    f"""<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}" role="img" font-family="monospace" font-size="{LH * 0.9:.1f}" fill="#c9d1d9">
+<style>.r{{white-space:pre;animation:w .9s steps(24) backwards}}@keyframes w{{from{{clip-path:inset(0 100% 0 0)}}}}@media (prefers-reduced-motion:reduce){{.r{{animation:none}}}}</style>
+<rect x=".5" y=".5" width="{W - 1}" height="{H - 1}" rx="8" fill="#0d1117" stroke="#30363d"/>
+<g transform="translate(0,-2)">{body}</g>
 </svg>"""
 )
 print(W, H)
