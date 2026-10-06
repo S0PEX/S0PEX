@@ -1,74 +1,60 @@
-# 👋 Welcome to My Digital Space!
+<div align="center">
+  <h3><code>s0pex@github ~ $ ./contributions.sh</code></h3>
+  <img src="./img/contrib-heatmap.svg" width="860" />
+  <br><br>
+  <h3><code>s0pex@github ~ $ whoami</code></h3>
+  <table>
+    <tr>
+      <td valign="top"><img src="./img/avi-ascii.svg" width="370" /></td>
+      <td valign="top"><img src="./img/info-card.svg" width="490" /></td>
+    </tr>
+  </table>
+</div>
 
-I'm a passionate software developer whose journey began with Visual Basic .NET in my childhood years. Currently pursuing my M.Sc. in Computer Science, I specialize in backend development, distributed systems, and cloud infrastructure. I combine academic excellence with hands-on industry experience to create scalable, efficient solutions.
+<br>
 
-## 💼 Professional Experience
+Backend and infrastructure developer. I work on distributed systems, cloud infrastructure and CI/CD.
 
-### Software Developer @ Infolytics AG
-- Infrastructure provisioning with Proxmox VE and Ansible
-- CI/CD pipeline development using GitLab CI
-- Technical mentoring and knowledge sharing
-- Cloud infrastructure and DevOps optimization
+<p align="center">
+<a href="https://de.linkedin.com/in/artur-komaristych-89b623171"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" /></a>
+<a href="https://github.com/S0PEX"><img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" /></a>
+</p>
 
-### Bachelor Thesis @ Fraunhofer IPT
-- Migrated AutoML pipeline to Kubernetes cluster
-- Developed NestJS backend and ReactJS frontend
-- Implemented cloud-native architecture using Oracle OKE
-- Tech stack: TypeScript, NestJS, Python, Podman, Argo
+<br>
 
-### Working Student @ Infolytics AG
-- Full-stack development with Spring Boot, Angular, and ReactJS
-- RESTful API development using Spring Boot, Hibernate, and JPA
-- Signal Data Platform (SDF) maintenance using C++ and Boost
-- Cloud infrastructure and deployment automation
+### Experience
 
-## 🎓 Education
-- **M.Sc. in Computer Science** - University of Cologne *(Present)*
-  - Focus: Software-Intensive Systems & High-Performance Computing
-  - Active in faculty selection committee
-- **B.Sc. in Computer Science** - RWTH Aachen
-  - Thesis: Cloud-Based Architecture for Domain-Specific AutoML Systems
-  - Minor in Business Administration
-- **Information Technology Assistant** - Georg-Simon-Ohm-Berufskolleg
-  - Focus on application development and network administration
+| Role                   | Where         | What I did                                                                                                   |
+| :--------------------- | :------------ | :----------------------------------------------------------------------------------------------------------- |
+| **Software Developer** | Infolytics AG | Provision infrastructure with Proxmox VE and Ansible, build GitLab CI pipelines, mentor teammates.           |
+| **Working Student**    | Infolytics AG | Full-stack work with Spring Boot, Angular and ReactJS. Maintained a C++ signal data platform built on Boost. |
 
-## 🛠 Technical Skills
-- **Languages & Frameworks** 💻
-  - Java (Spring Boot, Hibernate) 
-  - C# (.NET Core, ASP.NET Core, Entity Framework) 
-  - TypeScript (NestJS, Angular, ReactJS, Next.js) 
-  - C++ (Boost, unixODBC) 
-  - Python 
-- **Infrastructure & DevOps** 🛠
-  - Container Orchestration (Kubernetes) 
-  - Virtualization (Docker, Proxmox VE) 
-  - Configuration Management (Ansible) 
-  - CI/CD (GitLab CI, GitHub Actions) 
-  - Infrastructure as Code
-- **Cloud Platforms** ☁️
-  - Google Compute Engine 
-  - Oracle Cloud Infrastructure 
-- **Data & Storage** 💾
-  - SQL Databases (PostgreSQL, MySQL, MariaDB)
-  - ORM (Entity Framework, JPA, Hibernate, Drizzle) 
+### Education
 
-## 🚀 Areas of Expertise
-- Cloud Architecture & Infrastructure
-- Distributed Systems Design
-- Backend Development
-- DevOps & Automation
-- System Integration
+| Degree                                             | School                                                            | Notes                                                                                                                                      |
+| :------------------------------------------------- | :---------------------------------------------------------------- | :----------------------------------------------------------------------------------------------------------------------------------------- |
+| **M.Sc. Computer Science** (Dec 2025, with honors) | University of Cologne                                             | Software-Intensive Systems and High-Performance Computing. Member of the faculty selection committee.                                      |
+| &emsp;└ Master Thesis                              | German Aerospace Center (DLR), Distributed Software Systems group |                                                                                                                                            |
+| **B.Sc. Computer Science** (2022)                  | RWTH Aachen University                                            | Thesis on cloud-based architecture for domain-specific AutoML. Minor in Business Administration.                                           |
+| &emsp;└ Bachelor Thesis                            | Fraunhofer IPT                                                    | Moved an AutoML pipeline onto Kubernetes (Oracle OKE) with a NestJS backend and ReactJS frontend. Stack: TypeScript, Python, Podman, Argo. |
+| **IT Assistant**                                   | Georg-Simon-Ohm-Berufskolleg                                      | Application development and network administration.                                                                                        |
 
-## 🎯 Outside the Code
-When I'm not immersed in code, you'll find me:
-- 🏸 Playing badminton
-- 🧗‍♂️ Bouldering and climbing
-- 🏃‍♂️ Staying active outdoors
+### Stack
 
-## 🤝 Let's Connect!
-I'm always interested in collaborating on exciting projects and connecting with fellow developers. Feel free to reach out!
+|                    |                                                                          |
+| :----------------- | :----------------------------------------------------------------------- |
+| **Languages**      | Java, C#, TypeScript, C++, Python                                        |
+| **Frameworks**     | Spring Boot, ASP.NET Core, NestJS, Angular, React, Next.js               |
+| **Infrastructure** | Kubernetes, Docker, Proxmox VE, Ansible, GitLab CI, GitHub Actions       |
+| **Cloud**          | Google Compute Engine, Oracle Cloud Infrastructure                       |
+| **Data**           | PostgreSQL, MySQL, MariaDB via JPA, Hibernate, Entity Framework, Drizzle |
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://de.linkedin.com/in/artur-komaristych-89b623171)
+<p>
+  <img src="https://skillicons.dev/icons?i=java,cs,ts,cpp,python,spring,nestjs,angular,react,nextjs,kubernetes,docker,ansible,gitlab,githubactions,gcp,oracle,postgres,mysql,mariadb&perline=10" alt="Tech stack icons" />
+</p>
 
----
-*"Code is like humor. When you have to explain it, it's bad." – Cory House*
+### Away from the keyboard
+
+Badminton, bouldering and being outdoors.
+
+<sub>"Code is like humor. When you have to explain it, it's bad." - Cory House</sub>
