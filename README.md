@@ -24,10 +24,13 @@ Backend and infrastructure developer. I work on distributed systems, cloud infra
 
 ### Experience
 
-| Role                   | Where         | What I did                                                                                                   |
-| :--------------------- | :------------ | :----------------------------------------------------------------------------------------------------------- |
-| **Software Developer** | Infolytics AG | Provision infrastructure with Proxmox VE and Ansible, build GitLab CI pipelines, mentor teammates.           |
-| **Working Student**    | Infolytics AG | Full-stack work with Spring Boot, Angular and ReactJS. Maintained a C++ signal data platform built on Boost. |
+| Role                          | Where         | Period              | What I do                                                                                                                                                                                                                                                                                                                                                                                                                                    |
+| :---------------------------- | :------------ | :------------------ | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Senior Software Developer** | Infolytics AG | Apr 2026 - today    | <ul><li>Technical owner of three domains of a running public-sector platform (Spring Boot, Angular, OpenShift) where applications are submitted and processed by caseworkers</li><li>End-to-end responsibility for them: architecture, delivery, operations and direct customer contact</li><li>Still active on SDF: feature development and consulting</li><li>Mentor junior developers and working students</li></ul>                      |
+| **Software Developer**        | Infolytics AG | Oct 2022 - Mar 2026 | <ul><li>Kept developing SDF with more responsibility</li><li>Led the migration of the SDF frontend applications from jQuery to Angular, and of the backend from MaxDB to PostgreSQL including all existing data, with no downtime</li><li>Debugged hard production issues down to protocol level (memory leaks, network protocol bugs) and shipped the fixes</li><li>Replaced manual deploys with GitOps on Kubernetes and Argo CD</li></ul> |
+| **Working Student**           | Infolytics AG | Oct 2018 - Sep 2022 | <ul><li>Developed the Java client library implementing the native TCP protocol of SDF, the signal data platform behind WiValdi*, a 2,000+ sensor wind research project with DLR. Also worked on the C++ backend</li><li>Other Java projects: optimization and housekeeping</li></ul>                                                                                                                                                         |
+
+<sub>\* WiValdi (also called DFWind) is a DLR research project. Infolytics develops SDF, the signal data platform it runs on, and that is the part I worked on.</sub>
 
 ### Education
 
@@ -44,9 +47,9 @@ Backend and infrastructure developer. I work on distributed systems, cloud infra
 |                    |                                                                          |
 | :----------------- | :----------------------------------------------------------------------- |
 | **Languages**      | Java, C#, TypeScript, C++, Python                                        |
-| **Frameworks**     | Spring Boot, ASP.NET Core, NestJS, Angular, React, Next.js               |
+| &emsp;└ Frameworks | Spring Boot, ASP.NET Core, NestJS, Angular, React, Next.js               |
 | **Infrastructure** | Kubernetes, Docker, Proxmox VE, Ansible, GitLab CI, GitHub Actions       |
-| **Cloud**          | Google Compute Engine, Oracle Cloud Infrastructure                       |
+| &emsp;└ Cloud      | Google Compute Engine, Oracle Cloud Infrastructure                       |
 | **Data**           | PostgreSQL, MySQL, MariaDB via JPA, Hibernate, Entity Framework, Drizzle |
 
 <p>
