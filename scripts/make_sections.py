@@ -1,4 +1,4 @@
-"""Render the Experience, Education and Stack sections as SVG (GitHub strips CSS/JS from README)."""
+"""Render the Experience, Education, Stack and Offline sections as SVG (GitHub strips CSS/JS from README)."""
 
 import os
 from html import escape
@@ -9,7 +9,7 @@ W = 860
 BG, LINE, TEXT, MUTED, ACCENT = "#0d1117", "#30363d", "#c9d1d9", "#8b949e", "#39d353"
 SANS = "-apple-system,'Segoe UI',Helvetica,Arial,sans-serif"
 MONO = "ui-monospace,SFMono-Regular,Menlo,Consolas,monospace"
-NODE_X, TEXT_X, WRAP = 176, 204, 86
+NODE_X, TEXT_X, WRAP = 176, 204, 78
 
 STYLE = f"""<style>
 text{{font-family:{SANS};fill:{TEXT}}}
@@ -23,11 +23,16 @@ text{{font-family:{SANS};fill:{TEXT}}}
 </style>"""
 
 
+def star(text):
+    """Bold the footnote asterisk."""
+    return escape(text).replace("*", '<tspan font-weight="700">*</tspan>')
+
+
 def svg(h, body, title):
     return (
         f'<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{h}" viewBox="0 0 {W} {h}" role="img">'
         f"<title>{escape(title)}</title>{STYLE}"
-        f'<rect width="{W}" height="{h}" rx="8" fill="{BG}" stroke="{LINE}"/>{body}</svg>'
+        f'<rect x=".5" y=".5" width="{W - 1}" height="{h - 1}" rx="8" fill="{BG}" stroke="{LINE}"/>{body}</svg>'
     )
 
 
@@ -37,9 +42,9 @@ def timeline(items):
     for i, (period, role, place, bullets) in enumerate(items):
         top, rows = y, []
         delay = f'style="animation-delay:{i * 180}ms"'
-        for j, p in enumerate(period):
+        if period:
             rows.append(
-                f'<text class="m" x="{NODE_X - 24}" y="{y + 5 + j * 16}" text-anchor="end" font-size="12">{escape(p)}</text>'
+                f'<text class="m" x="{NODE_X - 24}" y="{y + 5}" text-anchor="end" font-size="12">{escape(" - ".join(period))}</text>'
             )
         rows.append(
             f'<text class="h" x="{TEXT_X}" y="{y + 5}">{escape(role)}'
@@ -47,16 +52,18 @@ def timeline(items):
         )
         y += 30
         for b in bullets:
-            for k, line in enumerate(wrap(b, WRAP)):
-                if k == 0:
+            text, subs = b if isinstance(b, tuple) else (b, [])
+            for indent, item in [(0, text)] + [(1, t) for t in subs]:
+                for k, line in enumerate(wrap(item, WRAP - indent * 6)):
+                    if k == 0:
+                        rows.append(
+                            f'<circle cx="{TEXT_X + 3 + indent * 18}" cy="{y - 4}" r="{2 - indent * 0.5}" fill="{MUTED}"/>'
+                        )
                     rows.append(
-                        f'<circle cx="{TEXT_X + 3}" cy="{y - 4}" r="2" fill="{MUTED}"/>'
+                        f'<text class="b" x="{TEXT_X + 16 + indent * 18}" y="{y}">{star(line)}</text>'
                     )
-                rows.append(
-                    f'<text class="b" x="{TEXT_X + 16}" y="{y}">{escape(line)}</text>'
-                )
-                y += 21
-            y += 4
+                    y += 21
+                y += 4
         nodes.append((top + 1, i == 0))
         out.append(f'<g class="a" {delay}>{"".join(rows)}</g>')
         y += 22
@@ -77,7 +84,7 @@ def chips(groups):
             f'<text class="m" x="{NODE_X - 24}" y="{y + 18}" text-anchor="end" font-size="12">{escape(label)}</text>'
         ]
         for n in names:
-            w = round(len(n) * 6.8 + 24)
+            w = round(len(n) * 7.6 + 24)
             if x + w > W - 24:
                 x, y = TEXT_X - 28, y + 36
             parts.append(
@@ -94,34 +101,34 @@ def chips(groups):
 
 EXPERIENCE = [
     (
-        ["Apr 2026", "today"],
+        ["2026", "present"],
         "Senior Software Developer",
         "Infolytics AG",
         [
-            "Technical owner of three domains of a running public-sector platform (Spring Boot, Angular, OpenShift) where applications are submitted and processed by caseworkers",
-            "End-to-end responsibility for them: architecture, delivery, operations and direct customer contact",
-            "Still active on SDF: feature development and consulting",
+            "Technical owner of three business domains of a live public-sector platform (Spring Boot, Angular, OpenShift) where applications are submitted and processed by caseworkers",
+            "End-to-end responsibility for these domains: architecture, delivery, operations and direct customer contact",
+            "Still active on SDF, the Infolytics signal data platform: feature development and consulting",
             "Mentor junior developers and working students",
         ],
     ),
     (
-        ["Oct 2022", "Mar 2026"],
+        ["2022", "2026"],
         "Software Developer",
         "Infolytics AG",
         [
-            "Kept developing SDF with more responsibility",
+            "Continued developing SDF alongside new responsibilities",
             "Led the migration of the SDF frontend applications from jQuery to Angular, and of the backend from MaxDB to PostgreSQL including all existing data, with no downtime",
-            "Debugged hard production issues down to protocol level (memory leaks, network protocol bugs) and shipped the fixes",
+            "Tracked down hard production issues (memory leaks, network protocol bugs) and shipped the fixes",
             "Replaced manual deploys with GitOps on Kubernetes and Argo CD",
         ],
     ),
     (
-        ["Oct 2018", "Sep 2022"],
+        ["2018", "2022"],
         "Working Student",
         "Infolytics AG",
         [
-            "Developed the Java client library implementing the native TCP protocol of SDF, the signal data platform behind WiValdi*, a 2,000+ sensor wind research project with DLR. Also worked on the C++ backend",
-            "Other Java projects: optimization and housekeeping",
+            "Developed the Java client library for the native TCP protocol of SDF, the signal data platform behind WiValdi*, a DLR wind research project with 2,000+ sensors. Also worked on the C++ backend",
+            "Other Java projects: optimization and maintenance",
             "Hired full-time right after the B.Sc.",
         ],
     ),
@@ -129,29 +136,42 @@ EXPERIENCE = [
 
 EDUCATION = [
     (
-        ["Dec 2025"],
+        ["2023", "2026"],
         "M.Sc. Computer Science, with honors",
         "University of Cologne",
         [
-            "Software-Intensive Systems and High-Performance Computing",
-            "Master thesis at the German Aerospace Center (DLR), Distributed Software Systems group",
+            "Focus areas: Software-Intensive Systems and High-Performance Computing",
+            (
+                'Master thesis at the German Aerospace Center (DLR), Distributed Software Systems group: "A Unifying Framework for Provisioning and Executing Computational Tools across Heterogeneous Computing Environments"',
+                [
+                    "Designed a coordinator-worker architecture and implemented a prototype that unifies tool execution across heterogeneous computing environments (Kubernetes, Slurm, native Linux, Windows) behind a single REST API*",
+                    "In production use at DLR, open source release planned",
+                ],
+            ),
             "Member of the faculty selection committee",
         ],
     ),
     (
-        ["2022"],
+        ["2018", "2022"],
         "B.Sc. Computer Science",
         "RWTH Aachen University",
         [
             "Minor in Business Administration",
-            "Bachelor thesis at Fraunhofer IPT: cloud-based architecture for domain-specific AutoML systems. Moved an AutoML pipeline onto Kubernetes (Oracle OKE) with a NestJS backend and ReactJS frontend",
+            (
+                'Bachelor thesis at Fraunhofer IPT: "Development and Deployment of a Cloud-Based System Architecture for Domain-Specific AutoML Systems"',
+                [
+                    "Migrated an AutoML pipeline to Kubernetes (Oracle OKE) and built a cloud-native architecture with a NestJS backend and ReactJS frontend",
+                ],
+            ),
         ],
     ),
     (
-        [],
-        "IT Assistant",
+        ["2015", "2018"],
+        "IT Assistant with A-levels",
         "Georg-Simon-Ohm-Berufskolleg",
-        ["Application development and network administration"],
+        [
+            "School-based vocational training in Germany (schulische Ausbildung) in programming, networking and more, completed together with the Abitur (German A-levels)"
+        ],
     ),
 ]
 
@@ -227,50 +247,61 @@ def offline():
     return 150, "".join(parts)
 
 
+def bullet_md(b):
+    text, subs = b if isinstance(b, tuple) else (b, [])
+    bold = lambda t: t.replace("*", "<b>*</b>")  # bold asterisk, flanking-rule safe
+    return "\n".join([f"- {bold(text)}"] + [f"  - {bold(t)}" for t in subs])
+
+
+NOTES = {
+    "experience": "* WiValdi (also called DFWind) is a DLR research project. I worked on SDF, the Infolytics signal data platform it runs on, not on WiValdi itself.",
+    "education": "* Tools are described in a declarative YAML specification (name, version, typed inputs and outputs, runtime). Workers parse it and register their tools with the central coordinator. Its REST API lists the registered tools and accepts jobs with binary or primitive inputs. Each job is scheduled onto a suitable worker, which stages the artifacts, executes the task and uploads the results. Failed jobs are retried, and users follow job progress through real-time events instead of polling.",
+}
+
+
+def with_note(h, body, text):
+    """Append a footnote under a timeline. Returns (height, body)."""
+    lines, y0 = wrap(text, 80), h - 40 + 24
+    note = "".join(
+        f'<text class="m" x="{TEXT_X}" y="{y0 + i * 17}" font-size="12">{star(t)}</text>'
+        for i, t in enumerate(lines)
+    )
+    return y0 + 17 * (len(lines) - 1) + 24, body + note
+
+
 def plain_text():
     """Same content as the SVGs, as markdown for search engines and copy/paste."""
 
     def block(items):
         return "\n\n".join(
             f"**{role}**, {place}{f' ({period[0]} to {period[1]})' if len(period) > 1 else f' ({period[0]})' if period else ''}\n\n"
-            + "\n".join(f"- {b}" for b in bullets)
+            + "\n".join(bullet_md(b) for b in bullets)
             for period, role, place, bullets in items
         )
 
     stack = "\n".join(f"- **{g}:** {', '.join(n)}" for g, n in STACK)
     return (
         "<details>\n<summary>Plain text version</summary>\n\n"
-        f"#### Experience\n\n{block(EXPERIENCE)}\n\n"
-        "\\* WiValdi (also called DFWind) is a DLR research project. Infolytics develops SDF, "
-        "the signal data platform it runs on, and that is the part I worked on.\n\n"
-        f"#### Education\n\n{block(EDUCATION)}\n\n#### Stack\n\n{stack}\n\n</details>"
+        f"#### Experience\n\n{block(EXPERIENCE)}\n\n<b>*</b> {NOTES['experience'][2:]}\n\n"
+        f"#### Stack\n\n{stack}\n\n"
+        f"#### Education\n\n{block(EDUCATION)}\n\n<b>*</b> {NOTES['education'][2:]}\n\n</details>"
     )
 
 
 def inject_readme():
     start, end = "<!-- plain-text:start -->", "<!-- plain-text:end -->"
     text = Path("README.md").read_text()
-    head, rest = text.split(start)
-    tail = rest.split(end)[1]
+    head, found, rest = text.partition(start)
+    _, found_end, tail = rest.partition(end)
+    assert found and found_end, "plain-text markers missing in README.md"
     Path("README.md").write_text(f"{head}{start}\n{plain_text()}\n{end}{tail}")
 
 
 if __name__ == "__main__":
-    h, body = timeline(EXPERIENCE)
-    note = "".join(
-        f'<text class="m" x="{TEXT_X}" y="{h - 34 + i * 16}" font-size="11">{t}</text>'
-        for i, t in enumerate(
-            [
-                "* WiValdi (also called DFWind) is a DLR research project. Infolytics develops SDF,",
-                "the signal data platform it runs on, and that is the part I worked on.",
-            ]
-        )
-    )
-    Path("img/experience.svg").write_text(
-        svg(h + 18, body + note, "Experience at Infolytics AG")
-    )
-    h, body = timeline(EDUCATION)
-    Path("img/education.svg").write_text(svg(h - 18, body, "Education"))
+    h, body = with_note(*timeline(EXPERIENCE), NOTES["experience"])
+    Path("img/experience.svg").write_text(svg(h, body, "Experience at Infolytics AG"))
+    h, body = with_note(*timeline(EDUCATION), NOTES["education"])
+    Path("img/education.svg").write_text(svg(h, body, "Education"))
     h, body = offline()
     Path("img/offline.svg").write_text(
         svg(
