@@ -5,16 +5,16 @@ from pathlib import Path
 LINES = [
     ("Name", "Artur Komaristych"),
     ("Now", "Senior Software Developer @ Infolytics AG"),
-    ("M.Sc.", "Computer Science @ Uni Cologne, 2025, honors"),
+    ("M.Sc.", "CS @ University of Cologne, 2025, honors"),
     ("", "└ Master Thesis @ DLR"),
-    ("B.Sc.", "Computer Science @ RWTH Aachen, 2022"),
+    ("B.Sc.", "CS @ RWTH Aachen, 2022"),
     ("", "└ Bachelor Thesis @ Fraunhofer IPT"),
     ("Stack", ""),
     ("└ Languages", "Java, C#, TypeScript, C++, Python"),
     ("└ Infra", "Kubernetes, Docker, Proxmox, Ansible"),
     ("└ Cloud", "Google Compute Engine, Oracle Cloud"),
     ("Focus", "Distributed systems, backend, DevOps"),
-    ("Offline", "Badminton, bouldering, outdoors"),
+    ("Offline", "Badminton, climbing, scuba diving"),
 ]
 static = os.environ.get("STATIC")
 

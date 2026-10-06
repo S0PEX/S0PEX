@@ -9,6 +9,8 @@
       <td valign="top"><img src="./img/info-card.svg" width="490" /></td>
     </tr>
   </table>
+  <br>
+  <sub>"Code is like humor. When you have to explain it, it's bad." - Cory House</sub>
 </div>
 
 <br>
@@ -22,42 +24,82 @@ Backend and infrastructure developer. I work on distributed systems, cloud infra
 
 <br>
 
-### Experience
+<div align="center">
 
-| Role                          | Where         | Period              | What I do                                                                                                                                                                                                                                                                                                                                                                                                                                    |
-| :---------------------------- | :------------ | :------------------ | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Senior Software Developer** | Infolytics AG | Apr 2026 - today    | <ul><li>Technical owner of three domains of a running public-sector platform (Spring Boot, Angular, OpenShift) where applications are submitted and processed by caseworkers</li><li>End-to-end responsibility for them: architecture, delivery, operations and direct customer contact</li><li>Still active on SDF: feature development and consulting</li><li>Mentor junior developers and working students</li></ul>                      |
-| **Software Developer**        | Infolytics AG | Oct 2022 - Mar 2026 | <ul><li>Kept developing SDF with more responsibility</li><li>Led the migration of the SDF frontend applications from jQuery to Angular, and of the backend from MaxDB to PostgreSQL including all existing data, with no downtime</li><li>Debugged hard production issues down to protocol level (memory leaks, network protocol bugs) and shipped the fixes</li><li>Replaced manual deploys with GitOps on Kubernetes and Argo CD</li></ul> |
-| **Working Student**           | Infolytics AG | Oct 2018 - Sep 2022 | <ul><li>Developed the Java client library implementing the native TCP protocol of SDF, the signal data platform behind WiValdi*, a 2,000+ sensor wind research project with DLR. Also worked on the C++ backend</li><li>Other Java projects: optimization and housekeeping</li></ul>                                                                                                                                                         |
+<h3><code>s0pex@github ~ $ cat experience.md</code></h3>
+<img src="./img/experience.svg" width="860" alt="Experience at Infolytics AG: Senior Software Developer since Apr 2026, Software Developer Oct 2022 to Mar 2026, Working Student Oct 2018 to Sep 2022." />
 
-<sub>\* WiValdi (also called DFWind) is a DLR research project. Infolytics develops SDF, the signal data platform it runs on, and that is the part I worked on.</sub>
+<br><br>
 
-### Education
+<h3><code>s0pex@github ~ $ cat education.md</code></h3>
+<img src="./img/education.svg" width="860" alt="Education: M.Sc. Computer Science with honors, University of Cologne (Dec 2025), master thesis at DLR. B.Sc. Computer Science, RWTH Aachen University (2022), bachelor thesis at Fraunhofer IPT. IT Assistant, Georg-Simon-Ohm-Berufskolleg." />
 
-| Degree                                             | School                                                            | Notes                                                                                                                                      |
-| :------------------------------------------------- | :---------------------------------------------------------------- | :----------------------------------------------------------------------------------------------------------------------------------------- |
-| **M.Sc. Computer Science** (Dec 2025, with honors) | University of Cologne                                             | Software-Intensive Systems and High-Performance Computing. Member of the faculty selection committee.                                      |
-| &emsp;└ Master Thesis                              | German Aerospace Center (DLR), Distributed Software Systems group |                                                                                                                                            |
-| **B.Sc. Computer Science** (2022)                  | RWTH Aachen University                                            | Thesis on cloud-based architecture for domain-specific AutoML. Minor in Business Administration.                                           |
-| &emsp;└ Bachelor Thesis                            | Fraunhofer IPT                                                    | Moved an AutoML pipeline onto Kubernetes (Oracle OKE) with a NestJS backend and ReactJS frontend. Stack: TypeScript, Python, Podman, Argo. |
-| **IT Assistant**                                   | Georg-Simon-Ohm-Berufskolleg                                      | Application development and network administration.                                                                                        |
+<br><br>
 
-### Stack
+<h3><code>s0pex@github ~ $ cat stack.md</code></h3>
+<img src="./img/stack.svg" width="860" alt="Stack: Java, C#, TypeScript, C++, Python. Spring Boot, ASP.NET Core, NestJS, Angular, React, Next.js. Kubernetes, OpenShift, Docker, Helm, Argo CD, Proxmox VE, Ansible, GitLab CI, GitHub Actions. Google Compute Engine, Oracle Cloud Infrastructure. PostgreSQL, MySQL, MariaDB, JPA, Hibernate, Entity Framework, Drizzle." />
 
-|                    |                                                                          |
-| :----------------- | :----------------------------------------------------------------------- |
-| **Languages**      | Java, C#, TypeScript, C++, Python                                        |
-| &emsp;└ Frameworks | Spring Boot, ASP.NET Core, NestJS, Angular, React, Next.js               |
-| **Infrastructure** | Kubernetes, Docker, Proxmox VE, Ansible, GitLab CI, GitHub Actions       |
-| &emsp;└ Cloud      | Google Compute Engine, Oracle Cloud Infrastructure                       |
-| **Data**           | PostgreSQL, MySQL, MariaDB via JPA, Hibernate, Entity Framework, Drizzle |
+</div>
 
-<p>
-  <img src="https://skillicons.dev/icons?i=java,cs,ts,cpp,python,spring,nestjs,angular,react,nextjs,kubernetes,docker,ansible,gitlab,githubactions,gcp,oracle,postgres,mysql,mariadb&perline=10" alt="Tech stack icons" />
-</p>
+<div align="center">
 
-### Away from the keyboard
+<h3><code>s0pex@github ~ $ ./away-from-keyboard.sh</code></h3>
+<img src="./img/offline.svg" width="860" alt="Away from the keyboard: scuba diving, bouldering and climbing, badminton." />
 
-Badminton, bouldering and being outdoors.
+</div>
 
-<sub>"Code is like humor. When you have to explain it, it's bad." - Cory House</sub>
+<!-- plain-text:start -->
+<details>
+<summary>Plain text version</summary>
+
+#### Experience
+
+**Senior Software Developer**, Infolytics AG (Apr 2026 to today)
+
+- Technical owner of three domains of a running public-sector platform (Spring Boot, Angular, OpenShift) where applications are submitted and processed by caseworkers
+- End-to-end responsibility for them: architecture, delivery, operations and direct customer contact
+- Still active on SDF: feature development and consulting
+- Mentor junior developers and working students
+
+**Software Developer**, Infolytics AG (Oct 2022 to Mar 2026)
+
+- Kept developing SDF with more responsibility
+- Led the migration of the SDF frontend applications from jQuery to Angular, and of the backend from MaxDB to PostgreSQL including all existing data, with no downtime
+- Debugged hard production issues down to protocol level (memory leaks, network protocol bugs) and shipped the fixes
+- Replaced manual deploys with GitOps on Kubernetes and Argo CD
+
+**Working Student**, Infolytics AG (Oct 2018 to Sep 2022)
+
+- Developed the Java client library implementing the native TCP protocol of SDF, the signal data platform behind WiValdi*, a 2,000+ sensor wind research project with DLR. Also worked on the C++ backend
+- Other Java projects: optimization and housekeeping
+- Hired full-time right after the B.Sc.
+
+\* WiValdi (also called DFWind) is a DLR research project. Infolytics develops SDF, the signal data platform it runs on, and that is the part I worked on.
+
+#### Education
+
+**M.Sc. Computer Science, with honors**, University of Cologne (Dec 2025)
+
+- Software-Intensive Systems and High-Performance Computing
+- Master thesis at the German Aerospace Center (DLR), Distributed Software Systems group
+- Member of the faculty selection committee
+
+**B.Sc. Computer Science**, RWTH Aachen University (2022)
+
+- Minor in Business Administration
+- Bachelor thesis at Fraunhofer IPT: cloud-based architecture for domain-specific AutoML systems. Moved an AutoML pipeline onto Kubernetes (Oracle OKE) with a NestJS backend and ReactJS frontend
+
+**IT Assistant**, Georg-Simon-Ohm-Berufskolleg
+
+- Application development and network administration
+
+#### Stack
+
+- **Languages:** Java, C#, TypeScript, C++, Python
+- **Frameworks:** Spring Boot, ASP.NET Core, NestJS, Angular, React, Next.js
+- **Infrastructure:** Kubernetes, OpenShift, Docker, Helm, Argo CD, Proxmox VE, Ansible, GitLab CI, GitHub Actions
+- **Cloud:** Google Compute Engine, Oracle Cloud Infrastructure
+- **Data:** PostgreSQL, MySQL, MariaDB, JPA, Hibernate, Entity Framework, Drizzle
+
+</details>
+<!-- plain-text:end -->
