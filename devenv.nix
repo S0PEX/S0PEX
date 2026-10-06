@@ -5,7 +5,7 @@
   languages.python = {
     enable = true;
     venv.enable = true;
-    venv.requirements = ./scripts/requirements.txt;
+    venv.requirements = ./scripts/requirements-portrait.txt;
   };
 
   git-hooks.hooks = {

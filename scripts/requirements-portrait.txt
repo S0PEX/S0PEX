@@ -1,0 +1,5 @@
+# everything for local use, including the portrait generator (make_ascii_svg.py)
+# the daily workflow only needs requirements.txt
+requests==2.32.3
+beautifulsoup4==4.12.3
+pillow

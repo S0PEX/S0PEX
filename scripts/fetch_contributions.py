@@ -6,12 +6,13 @@ import requests
 from bs4 import BeautifulSoup
 
 USER = "S0PEX"
-html = requests.get(f"https://github.com/users/{USER}/contributions", timeout=30).text
-soup = BeautifulSoup(html, "html.parser")
+resp = requests.get(f"https://github.com/users/{USER}/contributions", timeout=30)
+resp.raise_for_status()
+soup = BeautifulSoup(resp.text, "html.parser")
 tips = {t["for"]: t.text for t in soup.find_all("tool-tip")}
 days = []
 for td in soup.select("td.ContributionCalendar-day[data-date]"):
-    m = re.match(r"(\d+)", tips.get(td["id"], ""))
+    m = re.search(r"(\d+)", tips.get(td["id"], "").strip())
     days.append(
         {
             "date": td["data-date"],
@@ -19,6 +20,7 @@ for td in soup.select("td.ContributionCalendar-day[data-date]"):
             "count": int(m[1]) if m else 0,
         }
     )
+assert days and tips, "contribution calendar markup changed"
 days.sort(key=lambda d: d["date"])
 
 longest = cur = 0
