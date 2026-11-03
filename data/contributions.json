@@ -1827,12 +1827,17 @@
   },
   {
    "date": "2026-11-02",
-   "level": 1,
-   "count": 2
+   "level": 2,
+   "count": 10
+  },
+  {
+   "date": "2026-11-03",
+   "level": 0,
+   "count": 3
   }
  ],
- "total": 3915,
- "current_streak": 366,
- "longest_streak": 366,
+ "total": 3926,
+ "current_streak": 367,
+ "longest_streak": 367,
  "best_day": 31
 }
